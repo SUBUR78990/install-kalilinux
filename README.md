@@ -16,4 +16,5 @@ $ bash kali-linux.sh
 #jangan lupa di install vnc/nethunter.apk 
 
 #semoga bermanfaat
+
 #created by Subur M
