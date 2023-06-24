@@ -2,6 +2,7 @@
 
 
 $ git clone https://github.com/SUBUR78990/install-kalilinux.git
+#------------------------
 $ cd install-kalilinux
 $ ls
 $ chmod +x kali-linux.sh
