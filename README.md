@@ -1,5 +1,6 @@
-# install-kalilinux
+# install-kalilinux di aplikasi termux
 
+# copy paste kan ke aplikasi termux anda
 
 $ git clone https://github.com/SUBUR78990/install-kalilinux.git
 ----------------------------------------------------------------
