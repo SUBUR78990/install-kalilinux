@@ -2,15 +2,15 @@
 
 # copy paste kan ke aplikasi termux anda
 
-$ git clone https://github.com/SUBUR78990/install-kalilinux.git
+ git clone https://github.com/SUBUR78990/install-kalilinux.git
 ----------------------------------------------------------------
-$ cd install-kalilinux
+ cd install-kalilinux
 ----------------------
-$ ls
+ ls
 -------
-$ chmod +x kali-linux.sh
+ chmod +x kali-linux.sh
 ------------------------
-$ bash kali-linux.sh
+ bash kali-linux.sh
 ---------------------
 
  ( jangan lupa di install vnc/nethunter.apk )
