@@ -17,10 +17,5 @@
 
               ( semoga bermanfaat )
 
-            #  copyright by Subur M
-![image]
-(https://github.com/SUBUR78990/install-kalilinux/blob/Abangrombeng/Screenshot_20230316-211455.jpg)
+               copyright by Subur M
 
-
-
-![image](https://github.com/chenxiancai/STCObfuscator/raw/master/Screenshot_20230316-211455.jpg)
