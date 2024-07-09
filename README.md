@@ -17,7 +17,7 @@
 
               ( semoga bermanfaat )
 
-              copyright by Subur M
+            #  copyright by Subur M
 
 https://github.com/SUBUR78990/install-kalilinux/blob/Abangrombeng/Screenshot_20230316-211455.jpg
         
