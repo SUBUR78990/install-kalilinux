@@ -15,6 +15,9 @@
 
  ( jangan lupa di install vnc/nethunter.apk )
 
-               semoga bermanfaat
+              ( semoga bermanfaat )
 
               copyright by Subur M
+
+https://github.com/SUBUR78990/install-kalilinux/blob/Abangrombeng/Screenshot_20230316-211455.jpg
+        
