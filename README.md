@@ -30,10 +30,15 @@ Instalasi kali Linux versi 2024
 -------------------------------
 ```
  termux-setup-storage
+
  apt upgrade
+
  apt install wget
+
  wget -O install-nethunter-termux https://offs.ec/2MceZWr
+
  chmod +x install-nethunter-termux
+
  ./install-nethunter-termux
 
 ```
