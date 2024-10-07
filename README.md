@@ -1,12 +1,14 @@
+# 1
 ![Screenshot_20241007-140812](https://github.com/user-attachments/assets/23b74e4e-e67f-4a2b-b7e0-8ed1168b98c3)
 
+# 2
 
 ![Screenshot_20241007-140757](https://github.com/user-attachments/assets/abcef0a5-e78b-4603-906a-1f76e99d2edb)
 
 
 
 
-# install-kalilinux di aplikasi termux
+# install-kalilinux di aplikasi termux Android 
 
 # copy paste kan ke aplikasi termux anda
 ```
