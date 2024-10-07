@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash -e
 
-VERSION=2020011601
+VERSION=2024091801
 BASE_URL=https://kali.download/nethunter-images/current/rootfs
 USERNAME=kali
 
@@ -86,27 +86,26 @@ function set_strings() {
         fi
     elif [[ ${SYS_ARCH} == "armhf" ]];
     then
-        echo "[1] NetHunter ARMhf (minimal)"
-        echo "[2] NetHunter ARMhf (nano)"
+        echo "[1] NetHunter ARMhf (full)"
+        echo "[2] NetHunter ARMhf (minimal)"
+        echo "[3] NetHunter ARMhf (nano)"
         read -p "Enter the image you want to install: " wimg
-        if (( $wimg == "1" ));
-        then
+        if [[ "$wimg" == "1" ]]; then
+            wimg="full"
+        elif [[ "$wimg" == "2" ]]; then
             wimg="minimal"
-        elif (( $wimg == "2" ));
-        then
+        elif [[ "$wimg" == "3" ]]; then
             wimg="nano"
         else
-            wimg="minimal"
+            wimg="full"
         fi
-        else
-        wimg="full"
     fi
     ####
 
 
-    CHROOT=kali-${SYS_ARCH}
-    IMAGE_NAME=kalifs-${SYS_ARCH}-${wimg}.tar.xz
-    SHA_NAME=kalifs-${SYS_ARCH}-${wimg}.sha512sum
+    CHROOT=chroot/kali-${SYS_ARCH}
+    IMAGE_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.tar.xz
+    SHA_NAME=${IMAGE_NAME}.sha512sum
 }    
 
 function prepare_fs() {
@@ -288,7 +287,7 @@ function start-kex() {
     else
         SCREEN=":1"
     fi 
-    export HOME=\${HOME}; export USER=\${USR}; LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgcc_s.so.1 nohup vncserver \$SCREEN >/dev/null 2>&1 </dev/null
+    export MOZ_FAKE_NO_SANDBOX=1; export HOME=\${HOME}; export USER=\${USR}; LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgcc_s.so.1 nohup vncserver \$SCREEN >/dev/null 2>&1 </dev/null
     starting_kex=1
     return 0
 }
@@ -354,6 +353,12 @@ function fix_profile_bash() {
     if [ -f ${CHROOT}/root/.bash_profile ]; then
         sed -i '/if/,/fi/d' "${CHROOT}/root/.bash_profile"
     fi
+}
+
+function fix_resolv_conf() {
+    ## We don't have systemd so let's use static entries for Quad9 DNS servers
+    echo "nameserver 9.9.9.9" > $CHROOT/etc/resolv.conf
+    echo "nameserver 149.112.112.112" >> $CHROOT/etc/resolv.conf
 }
 
 function fix_sudo() {
@@ -425,6 +430,7 @@ cleanup
 
 printf "\n${blue}[*] Configuring NetHunter for Termux ...\n"
 fix_profile_bash
+fix_resolv_conf
 fix_sudo
 create_kex_launcher
 fix_uid
