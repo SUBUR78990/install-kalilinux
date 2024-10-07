@@ -12,19 +12,19 @@
 ```
 
  git clone https://github.com/SUBUR78990/install-kalilinux.git
-----------------------------------------------------------------
- cd install-kalilinux
-----------------------
- ls
--------
- chmod +x kali-linux.sh
-------------------------
- bash kali-linux.sh
----------------------
 
+ cd install-kalilinux
+
+ ls
+
+ chmod +x kali-linux.sh
+
+ bash kali-linux.sh
+
+```
  ( jangan lupa di install vnc/nethunter.apk )
 
- ```
+ 
 -------------------------------
 Instalasi kali Linux versi 2024
 -------------------------------
