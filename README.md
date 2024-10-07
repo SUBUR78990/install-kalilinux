@@ -27,13 +27,15 @@
 -------------------------------
 Instalasi kali Linux versi 2024
 -------------------------------
-# termux-setup-storage
-# apt upgrade
-# apt install wget
-# wget -O install-nethunter-termux https://offs.ec/2MceZWr
-# chmod +x install-nethunter-termux
-# ./install-nethunter-termux
+```
+ termux-setup-storage
+ apt upgrade
+ apt install wget
+ wget -O install-nethunter-termux https://offs.ec/2MceZWr
+ chmod +x install-nethunter-termux
+ ./install-nethunter-termux
 
+```
 ---------------------------------------
 Android Kali NetHunter Rootless Install
 16. To start Kali NetHunter you can use the following commands:
@@ -43,7 +45,7 @@ Android Kali NetHunter Rootless Install
 •To stop the NetHunter KeX GUI
 •To run NetHunter as root
 •You replace nethunter with nh in all these commands.
-
+```
 $ nethunter
 $ nethunter kex passwd
 $ nethunter kex
@@ -51,5 +53,5 @@ $ nethunter kex stop
 $ nethunter -r
 $ nh
 
-
+```
               ( semoga bermanfaat }
