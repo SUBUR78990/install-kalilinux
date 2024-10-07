@@ -44,12 +44,12 @@ Android Kali NetHunter Rootless Install
 •To run NetHunter as root
 •You replace nethunter with nh in all these commands.
 
-nethunter
-nethunter kex passwd
-nethunter kex
-nethunter kex stop
-nethunter -r
-nh
+$ nethunter
+$ nethunter kex passwd
+$ nethunter kex
+$ nethunter kex stop
+$ nethunter -r
+$ nh
 
 
               ( semoga bermanfaat }
