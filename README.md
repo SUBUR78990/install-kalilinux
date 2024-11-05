@@ -12,6 +12,12 @@
 
 # copy paste kan ke aplikasi termux anda
 ```
+termux-setup-storage
+
+ apt upgrade
+
+ apt install wget
+
  pkg install gpg
 
  git clone https://github.com/SUBUR78990/install-kalilinux.git
