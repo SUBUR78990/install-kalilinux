@@ -48,7 +48,7 @@ function ask() {
 }
 
 function get_arch() {
-    printf "${blue}[*] Checking device architecture ..."
+    printf "${green}[${white}*${green}]${blue} Checking device architecture ..."
     case $(getprop ro.product.cpu.abi) in
         arm64-v8a)
             SYS_ARCH=arm64
@@ -68,10 +68,10 @@ function set_strings() {
     ####
     if [[ ${SYS_ARCH} == "arm64" ]];
     then
-        echo "[1] NetHunter ARM64 (full)"
-        echo "[2] NetHunter ARM64 (minimal)"
-        echo "[3] NetHunter ARM64 (nano)"
-        read -p "Enter the image you want to install: " wimg
+        printf "${red}[${white}1${red}]${blue2} Install NetHunter ARM64 (full)\n"
+        printf "${red}[${white}2${red}]${blue2} Install NetHunter ARM64 (minimal)\n"
+        printf "${red}[${white}3${red}]${blue2} Install NetHunter ARM64 (nano)${white}\n\n"
+        read -p "PILIH & ENTER : " wimg
         if (( $wimg == "1" ));
         then
             wimg="full"
@@ -86,10 +86,10 @@ function set_strings() {
         fi
     elif [[ ${SYS_ARCH} == "armhf" ]];
     then
-        echo "[1] NetHunter ARMhf (full)"
-        echo "[2] NetHunter ARMhf (minimal)"
-        echo "[3] NetHunter ARMhf (nano)"
-        read -p "Enter the image you want to install: " wimg
+	printf "${red}[${white}1${red}]${blue2} Install NetHunter ARM64 (full)\n"
+	printf "${red}[${white}2${red}]${blue2} Install NetHunter ARM64 (minimal)\n"
+	printf "${red}[${white}3${red}]${blue2} Install NetHunter ARM64 (nano)${white}\n\n"
+	read -p "PILIH & INSTALL : " wimg
         if [[ "$wimg" == "1" ]]; then
             wimg="full"
         elif [[ "$wimg" == "2" ]]; then
@@ -111,7 +111,7 @@ function set_strings() {
 function prepare_fs() {
     unset KEEP_CHROOT
     if [ -d ${CHROOT} ]; then
-        if ask "Existing rootfs directory found. Delete and create a new one?" "N"; then
+        if ask "Direktori rootfs Sudah Ada. Hapus Atau buat yang baru?" "N"; then
             rm -rf ${CHROOT}
         else
             KEEP_CHROOT=1
@@ -121,7 +121,7 @@ function prepare_fs() {
 
 function cleanup() {
     if [ -f ${IMAGE_NAME} ]; then
-        if ask "Delete downloaded rootfs file?" "N"; then
+        if ask "Hapus file rootfs yang ada.??" "N"; then
 	    if [ -f ${IMAGE_NAME} ]; then
                 rm -f ${IMAGE_NAME}
 	    fi
@@ -161,7 +161,7 @@ function get_url() {
 function get_rootfs() {
     unset KEEP_IMAGE
     if [ -f ${IMAGE_NAME} ]; then
-        if ask "Existing image file found. Delete and download a new one?" "N"; then
+        if ask "File sudah ada. Hapus Atau install  yang baru??" "N"; then
             rm -f ${IMAGE_NAME}
         else
             printf "${yellow}[!] Using existing rootfs archive${reset}\n"
@@ -381,18 +381,19 @@ function fix_uid() {
 
 function print_banner() {
     clear
-    printf "${blue}##################################################\n"
-    printf "${blue}##                                              ##\n"
-    printf "${blue}##  88      a8P         db        88        88  ##\n"
-    printf "${blue}##  88    .88'         d88b       88        88  ##\n"
-    printf "${blue}##  88   88'          d8''8b      88        88  ##\n"
-    printf "${blue}##  88 d88           d8'  '8b     88        88  ##\n"
-    printf "${blue}##  8888'88.        d8YaaaaY8b    88        88  ##\n"
-    printf "${blue}##  88P   Y8b      d8''''''''8b   88        88  ##\n"
-    printf "${blue}##  88     '88.   d8'        '8b  88        88  ##\n"
-    printf "${blue}##  88       Y8b d8'          '8b 888888888 88  ##\n"
-    printf "${blue}##                                              ##\n"
-    printf "${blue}####  ############# NetHunter ####################${reset}\n\n"
+
+printf """
+\033[1;36m
+.____    .__                              ________          
+|    |   |__| ____  __ _____  ___         \_____  \   ______
+|    |   |  |/    \|  |  \  \/  /  ______  /   |   \ /  ___/
+|    |___|  |   |  \  |  />    <  /_____/ /    |    \\___ \ 
+|_______ \__|___|  /____//__/\_ \         \_______  /____  >
+        \/       \/            \/                 \/     \/ \n
+\t\033[1;31m[ \033[1;36mGithub : https://github.com/SUBUR78990 \033[1;31m]\n
+\t\033[1;31m    PERHATIKAN CARA INSTALASI NYA BRO
+\n\n"""
+
 }
 
 
@@ -400,6 +401,8 @@ function print_banner() {
 ##              Main            ##
 
 # Add some colours
+blue2='\033[1;36m'
+white='\033[1;37m'
 red='\033[1;31m'
 green='\033[1;32m'
 yellow='\033[1;33m'
