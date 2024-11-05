@@ -12,6 +12,7 @@
 
 # copy paste kan ke aplikasi termux anda
 ```
+ pkg install gpg
 
  git clone https://github.com/SUBUR78990/install-kalilinux.git
 
@@ -19,9 +20,8 @@
 
  ls
 
- chmod +x kali-linux.sh
+ gpg -d  kali-linux.sh.gpg | bash
 
- bash kali-linux.sh
 
 ```
  ( jangan lupa di install vnc/nethunter.apk )
