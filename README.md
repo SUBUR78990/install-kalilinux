@@ -12,13 +12,8 @@
 
 # copy paste kan ke aplikasi termux anda
 ```
-termux-setup-storage
 
- apt upgrade
-
- apt install wget
-
- pkg install gpg
+ pkg install git
 
  git clone https://github.com/SUBUR78990/install-kalilinux.git
 
@@ -26,7 +21,9 @@ termux-setup-storage
 
  ls
 
- gpg -d  kali-linux.sh.gpg | bash
+ chmod +x Kali.sh
+
+ bash Kali.sh
 
 
 ```
@@ -34,22 +31,7 @@ termux-setup-storage
 
  
 -------------------------------
-Instalasi kali Linux versi 2024
--------------------------------
-```
- termux-setup-storage
-
- apt upgrade
-
- apt install wget
-
- wget -O install-nethunter-termux https://offs.ec/2MceZWr
-
- chmod +x install-nethunter-termux
-
- ./install-nethunter-termux
-
-```
+ Thanks to All Developer 🙏😎
 ---------------------------------------
 Android Kali NetHunter Rootless Install
 16. To start Kali NetHunter you can use the following commands:
